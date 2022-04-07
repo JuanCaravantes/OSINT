@@ -30,6 +30,3 @@ class DNSDomain():
                 print (i.to_text())
         except:
             print("El nombre de dominio "+nombre+ "no se encontro en el dominio CNAME")
-
-if __name__ == "__main__":
-    DNSDomain.comprobar_dominio("kali.com")
