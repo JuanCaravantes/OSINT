@@ -26,6 +26,3 @@ def mostrar_info(self, response):
     print("\nServidor MX: " + str(self.response.json().get("is_mx_found").get("value")))
     print("\n¿Es seguro la entrega de este correo? (Delivarable: sí, undelivarable: no, Risky: arriesgado, unknown: desconocido): " + str(self.response.json().get("deliverability")))
     print("\n\nFiabilidad del correo:" +  str(self.response.json().get("quality_score"))+"\\1")
-
-if __name__ == '__main__':
-    email_info().email_verification("juan.caravantes.algaba@gmail.com")
