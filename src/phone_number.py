@@ -11,7 +11,8 @@ class phone_information():
         try:
             self.phone = phonenumbers.parse(number)
         except:
-            print("\El número no existe o es incorrecto")
+            print("\nEl número no puede tener caracteres especiales o letras")
+            exit()
         
 
     def phone_region(self):
@@ -47,4 +48,6 @@ class phone_information():
         for self.number in scam_phones:  
             print(self.number)   
   
+if __name__ == '__main__':
+    phone_information("+1222222222").phone_validation()
     
