@@ -1,5 +1,4 @@
-from dns import *
-from enum import Enum
+from dns import resolver
 
 class DNSDomain():      
 
