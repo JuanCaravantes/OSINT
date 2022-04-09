@@ -3,7 +3,7 @@ from phonenumbers import geocoder
 from phonenumbers import carrier
 from phonenumbers import timezone 
 
-class phone_information():
+class phone_info():
 
     def __init__(self, number, format = 'es') :
         self.number = number

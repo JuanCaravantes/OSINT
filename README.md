@@ -1,3 +1,5 @@
+IMPORTANTE: Se necesita crear un .env que posea una variable EMAIL_KEY que contenga un string que sea la apy_key personal del sitio web: abstractapi
+
 Una aplicación que permita tres opciones 
 -Verificar la veracidad de un número de teléfono
 -Buscar nombre de dominios registrados:
