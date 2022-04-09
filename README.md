@@ -1,9 +1,6 @@
-<<<<<<< HEAD
+
 IMPORTANTE: Se necesita crear un .env que posea una variable EMAIL_KEY que contenga un string que sea la apy_key personal del sitio web: abstractapi
 
-Una aplicación que permita tres opciones 
--Verificar la veracidad de un número de teléfono
-=======
 Una aplicación que permita tres opciones:
 
 -Verificar la veracidad de un número de teléfono.
@@ -14,8 +11,7 @@ Una aplicación que permita tres opciones:
     +El formato del teléfono (+34 856945682).
     +La zona horaria del teléfono.
     +Validación del telefono móvil, mostrará si el teléfono es válido y si es posible que exista.
-
->>>>>>> scripts
+    
 -Buscar nombre de dominios registrados:
 
   Buscará en los cuatro niveles de dominio (A, MX, NS, Cname) y mostrará en qué servidor se ha mostrado y en cuáles no. Además que dirá cuál es la dirección y cómo está guardada.
