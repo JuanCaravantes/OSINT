@@ -7,12 +7,6 @@ from tkinter import font
 import tkinter as tk
 import functools
 
-def codigoBorrar(entry):
-    entry.delete(0, END)
-
-def codigoBuscar(entry):
-    correo = entry.get()
-
 def simular(parent):
     #creamos la ventana y la configuramos
     top = tk.Toplevel(parent)
@@ -25,16 +19,21 @@ def simular(parent):
 
     #Labels
     Label(top, text="Introduzca el número de teléfono", font=("Calibri, 12")).place(x=320, y=30)
-
     top.protocol("WM_DELETE_WINDOW", functools.partial(volver,parent,top))
-
+    
+    def codigoBorrar():
+        entry.delete(0, END)
+        
+    def codigoBuscar():
+        correo = entry.get()
+    
     #Entries
     entry = Entry(top)
     entry.place(x=320, y= 60)
-
+    
     #Botones
-    BotonBuscar = Button(top, text="Buscar", command=codigoBuscar(entry)).place(x=320,y=100)
-    BotonBorrer = Button(top, text="Borrar", command=codigoBorrar(entry)).place(x=420, y=100)
+    BotonBuscar = Button(top, text="Buscar", command=codigoBuscar).place(x=320,y=100)
+    BotonBorrer = Button(top, text="Borrar", command=codigoBorrar).place(x=420, y=100)
     BotonVolver = Button(top, text="Volver a ventana principal", command=functools.partial(volver,parent,top)).place(x=600, y=200)
     parent.withdraw()
     

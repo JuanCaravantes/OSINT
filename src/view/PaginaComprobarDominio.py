@@ -26,9 +26,14 @@ def simular(parent):
 
     #Labels
     Label(top, text="Introduzca el dominio", font=("Calibri, 12")).place(x=320, y=30)
-
     top.protocol("WM_DELETE_WINDOW", functools.partial(volver,parent,top))
-
+    
+    def codigoBorrar():
+        entry.delete(0, END)
+    
+    def codigoBuscar():
+        correo = entry.get()
+    
     #Entries
     entry = Entry(top)
     entry.place(x=320, y= 60)

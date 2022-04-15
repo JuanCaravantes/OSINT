@@ -45,7 +45,6 @@ BotonDominio = Button(frame, text="Verificar Dominio",width=25,height=10, comman
 BotonCorreo = Button(frame, text="Verificar Correo Electrónico",width=25,height=10,command=redirigirCorreo).place(x=940,y=360)
 
 
-
 #Esta linea siempre debe ir al final
 root.mainloop()
 
