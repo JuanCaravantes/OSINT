@@ -1,11 +1,18 @@
 #!/usr/bin/python3
 
 from cgitb import text
+import imp
 from textwrap import fill
 from tkinter import *
 from tkinter import font
 import tkinter as tk
+import os, sys
 import functools
+
+p = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+sys.path.append(p) #Esto es para que detecte el paquete controller
+
+from controller.phone_verification  import phone_info
 
 def simular(parent):
     #creamos la ventana y la configuramos
@@ -25,7 +32,10 @@ def simular(parent):
         entry.delete(0, END)
         
     def codigoBuscar():
-        correo = entry.get()
+
+        telefono = phone_info(entry.get())
+        print(telefono.phone_format()) #Para comprobar si funciona, y funciona jeje
+
     
     #Entries
     entry = Entry(top)

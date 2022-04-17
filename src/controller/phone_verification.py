@@ -47,7 +47,4 @@ class phone_info():
         scam_phones = phonenumbers.PhoneNumberMatcher(scam_list, "IN")  
         for self.number in scam_phones:  
             print(self.number)   
-  
-if __name__ == '__main__':
-    phone_information("+1222222222").phone_validation()
     

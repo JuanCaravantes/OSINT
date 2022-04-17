@@ -9,6 +9,12 @@ from tkinter import font
 import tkinter as tk
 from unittest import result
 import functools
+import os, sys
+
+p = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+sys.path.append(p) #Esto es para que detecte el paquete controller
+
+from controller.email_verification  import email_info
 
         
 def simular(parent):
@@ -28,7 +34,8 @@ def simular(parent):
         entry.delete(0, END)
     
     def codigoBuscar():
-        correo = entry.get()
+        correo = email_info().email_verification(entry.get())
+        print(correo)
     
     #Entries
     entry = Entry(top)

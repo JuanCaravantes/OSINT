@@ -6,12 +6,12 @@ from tkinter import *
 from tkinter import font
 import tkinter as tk
 import functools
+import os, sys
 
-def codigoBorrar(entry):
-    entry.delete(0, END)
+p = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+sys.path.append(p) #Esto es para que detecte el paquete controller
 
-def codigoBuscar(entry):
-    correo = entry.get()
+from controller.DNS_verification  import DNSDomain
 
 def simular(parent):
     
@@ -32,7 +32,8 @@ def simular(parent):
         entry.delete(0, END)
     
     def codigoBuscar():
-        correo = entry.get()
+        dominio = DNSDomain.comprobar_dominio(entry.get())
+        print(dominio)
     
     #Entries
     entry = Entry(top)
