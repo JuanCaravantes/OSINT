@@ -47,4 +47,3 @@ BotonCorreo = Button(frame, text="Verificar Correo Electrónico",width=25,height
 
 #Esta linea siempre debe ir al final
 root.mainloop()
-

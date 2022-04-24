@@ -42,7 +42,12 @@ def simular(parent):
     #Botones
     BotonBuscar = Button(top, text="Buscar", command=codigoBuscar).place(x=320,y=100)
     BotonBorrer = Button(top, text="Borrar", command=codigoBorrar).place(x=420, y=100)
-    BotonVolver = Button(top, text="Volver a ventana principal", command=functools.partial(volver,parent,top)).place(x=600, y=200)
+    BotonVolver = Button(top, text="Volver a ventana principal", command=functools.partial(volver,parent,top)).place(x=600, y=400)
+    
+    #Listboxes
+    list = Listbox(top,width=40)
+    list.place(x=315, y=160)
+    
     parent.withdraw()
        
 def volver(parent,top):
