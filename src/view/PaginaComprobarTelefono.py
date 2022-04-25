@@ -14,7 +14,10 @@ sys.path.append(p) #Esto es para que detecte el paquete controller
 
 from controller.phone_verification  import phone_info
 
+TLFN_INFO = ""
+
 def simular(parent):
+    
     #creamos la ventana y la configuramos
     top = tk.Toplevel(parent)
     top.title("Verificación de Número de Teléfono")
@@ -32,24 +35,29 @@ def simular(parent):
         entry.delete(0, END)
         
     def codigoBuscar():
-
         telefono = phone_info(entry.get())
-        print(telefono.phone_format()) #Para comprobar si funciona, y funciona jeje
+
+        if list.size() != 0:
+            list.delete(0,(list.size()-1))
+        list.insert(0,telefono.phone_format())
+        list.insert(1,telefono.phone_provider())
+        list.insert(2,telefono.phone_region())
+        list.insert(3,telefono.phone_timezone())
+        list.insert(4,telefono.phone_validation())        
+        list.place(x=260, y=160)
 
     
     #Entries
     entry = Entry(top)
     entry.place(x=320, y= 60)
+    #Listboxes
+    list = Listbox(top,width=70)
     
     #Botones
     BotonBuscar = Button(top, text="Buscar", command=codigoBuscar).place(x=320,y=100)
     BotonBorrer = Button(top, text="Borrar", command=codigoBorrar).place(x=420, y=100)
     BotonVolver = Button(top, text="Volver a ventana principal", command=functools.partial(volver,parent,top)).place(x=600, y=400)
-    
-    #Listboxes
-    list = Listbox(top,width=40)
-    list.place(x=315, y=160)
-    
+
     parent.withdraw()
     
 def volver(parent,top):

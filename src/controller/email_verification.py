@@ -12,17 +12,22 @@ class email_info():
         try:
             self.email = "&email="+email
             response = requests.get(self.url+self.key+self.email)
-            mostrar_info(self,response)
+            return mostrar_info(self,response)
         except:
             print("Algo falló")
 
 def mostrar_info(self, response):
     self.response = response
-    print("Información del correo: " + str(self.response.json().get("email")))
-    print("\nFormato correcto: " + str(self.response.json().get("is_valid_format").get("value")))
-    print("\nCorreo gratuito: " + str(self.response.json().get("is_free_email").get("value")))
-    print("\nCorreo destinado a un fin especifico (team@, support@, etc): " + str(self.response.json().get("is_role_email").get("value")))
-    print("\nProtocolo SMTP: " + str(self.response.json().get("is_smtp_valid").get("value")))
-    print("\nServidor MX: " + str(self.response.json().get("is_mx_found").get("value")))
-    print("\n¿Es seguro la entrega de este correo? (Delivarable: sí, undelivarable: no, Risky: arriesgado, unknown: desconocido): " + str(self.response.json().get("deliverability")))
-    print("\n\nFiabilidad del correo:" +  str(self.response.json().get("quality_score"))+"\\1")
+
+    info = []
+
+    info.append("Información del correo: " + str(self.response.json().get("email")))
+    info.append("Formato correcto: " + str(self.response.json().get("is_valid_format").get("value")))
+    info.append("Correo gratuito: " + str(self.response.json().get("is_free_email").get("value")))
+    info.append("Correo destinado a un fin especifico (team@, support@, etc): " + str(self.response.json().get("is_role_email").get("value")))
+    info.append("Protocolo SMTP: " + str(self.response.json().get("is_smtp_valid").get("value")))
+    info.append("Servidor MX: " + str(self.response.json().get("is_mx_found").get("value")))
+    info.append("¿Es seguro la entrega de este correo?: " + str(self.response.json().get("deliverability")))
+    info.append("Fiabilidad del correo:" +  str(self.response.json().get("quality_score"))+"\\1")
+
+    return info

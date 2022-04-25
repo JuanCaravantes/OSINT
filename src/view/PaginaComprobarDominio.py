@@ -33,7 +33,13 @@ def simular(parent):
     
     def codigoBuscar():
         dominio = DNSDomain.comprobar_dominio(entry.get())
-        print(dominio)
+        if list.size() != 0:
+            list.delete(0,(list.size()-1))
+
+        for i in range(len(dominio)):
+            list.insert(i, dominio.pop(0))
+        
+        list.place(x=270, y=160)
     
     #Entries
     entry = Entry(top)
@@ -45,8 +51,8 @@ def simular(parent):
     BotonVolver = Button(top, text="Volver a ventana principal", command=functools.partial(volver,parent,top)).place(x=600, y=400)
     
     #Listboxes
-    list = Listbox(top,width=40)
-    list.place(x=315, y=160)
+    list = Listbox(top,width=70)
+    
     
     parent.withdraw()
        
