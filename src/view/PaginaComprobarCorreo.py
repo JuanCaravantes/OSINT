@@ -62,4 +62,3 @@ def simular(parent):
 def volver(parent,top):
     parent.deiconify()
     top.destroy()
-    

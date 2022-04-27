@@ -27,8 +27,8 @@ frame.config(width="960", height="480")
 frame.config(bg="#c6c6c6")
 
 #Labels
-Label(frame, text="Bienvenido a nuestro programa de OSINT", font=("Calibri, 16")).place(x=290, y=20)
-Label(frame, text="Por favor seleccione la opción que desea usar", font=("Calibri, 12")).place(x=320, y=60)
+Label(frame, text="Bienvenido a nuestro programa de OSINT", font=("Calibri, 20")).place(x=360, y=20)
+Label(frame, text="Por favor seleccione la opción que desea usar", font=("Calibri, 16")).place(x=360, y=60)
 
 def redirigirCorreo():
     PaginaComprobarCorreo.simular(root)
@@ -40,9 +40,9 @@ def redirigirTelefono():
     PaginaComprobarTelefono.simular(root)
 
 #Botones
-BotonTelefono = Button(frame, text="Verificar Número de Teléfono",width=25,height=10,command=redirigirTelefono).place(x=100,y=360)
-BotonDominio = Button(frame, text="Verificar Dominio",width=25,height=10, command=redirigirDominio).place(x=520,y=360)
-BotonCorreo = Button(frame, text="Verificar Correo Electrónico",width=25,height=10,command=redirigirCorreo).place(x=940,y=360)
+BotonTelefono = Button(frame, text="Verificar Número de Teléfono",width=25,bg="#ffb703",height=10,command=redirigirTelefono).place(x=100,y=360)
+BotonDominio = Button(frame, text="Verificar Dominio",width=25,height=10,bg="#ffb703", command=redirigirDominio).place(x=520,y=360)
+BotonCorreo = Button(frame, text="Verificar Correo Electrónico",width=25,height=10,bg="#ffb703",command=redirigirCorreo).place(x=940,y=360)
 
 
 #Esta linea siempre debe ir al final
